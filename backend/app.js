@@ -2,7 +2,9 @@ const express = require('express')
 const app = express()
 const todoController = require('./controller/todoController')
 
+app.use(express.json())
 app.use('/todos', todoController)
+
 
 app.get("/", (req, res)=>{
     res.send("Welcome to Thandi's to-do list")
